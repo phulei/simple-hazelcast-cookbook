@@ -14,8 +14,19 @@ group 'hazelcast group' do
   system true
 end
 
+dist_path = ::File.join(Chef::Config[:file_cache_path], "hazelcast-#{node['hazelcast']['version']}.tar.gz")
+
+remote_file dist_path do
+  source node['hazelcast']['download_url']
+
+  backup false
+  checksum node['hazelcast']['checksum']
+  owner node['hazelcast']['user']
+  group node['hazelcast']['group']
+end
+
 ark 'hazelcast' do
-  url node['hazelcast']['download_url']
+  url dist_path
   owner node['hazelcast']['user']
   group node['hazelcast']['group']
   version node['hazelcast']['version']
