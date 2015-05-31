@@ -7,3 +7,9 @@ long_description 'Installs only hazelcast'
 issues_url       'https://github.com/jsirex/simple-hazelcast-cookbook/issues'
 source_url       'https://github.com/jsirex/simple-hazelcast-cookbook'
 version          '0.1.0'
+
+
+depends 'ark'
+depends 'runit'
+
+supports 'debian'

@@ -1,2 +1,1 @@
-# Overriding some attributes for tests
-default['simple']['hazelcast']['foo'] = 'baz'
+default['java']['jdk_version'] = '7'

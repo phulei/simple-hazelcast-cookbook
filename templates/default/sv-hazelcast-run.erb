@@ -1,0 +1,8 @@
+#!/bin/sh
+
+export JAVA_OPTS="<%= @options['java_opts'].join(' ') %>"
+export HOME=<%= @options['home'] %>
+cd $HOME
+
+exec 2>&1
+exec su - <%= @options['user'] %> -p -c "<%= @options['home'] %>/bin/server.sh"

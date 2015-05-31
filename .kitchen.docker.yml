@@ -10,7 +10,7 @@ platforms:
     driver_config:
       require_chef_omnibus: false
       provision_command:
-        - apt-get update; apt-get -y install build-essential wget net-tools
+        - apt-get update; apt-get -y install build-essential wget net-tools zip unzip less rsync vim
         - curl -L https://www.opscode.com/chef/install.sh | bash
 
   - name: centos-7

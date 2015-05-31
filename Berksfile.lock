@@ -1,0 +1,27 @@
+DEPENDENCIES
+  java
+  simple-hazelcast
+    path: .
+    metadata: true
+  simple-hazelcast-test
+    path: test/fixtures/cookbooks/simple-hazelcast-test
+
+GRAPH
+  7-zip (1.0.2)
+    windows (>= 1.2.2)
+  ark (0.9.0)
+    7-zip (>= 0.0.0)
+    windows (>= 0.0.0)
+  chef_handler (1.1.9)
+  java (1.31.0)
+  packagecloud (0.0.18)
+  runit (1.6.0)
+    packagecloud (>= 0.0.0)
+  simple-hazelcast (0.1.0)
+    ark (>= 0.0.0)
+    runit (>= 0.0.0)
+  simple-hazelcast-test (0.1.0)
+    java (>= 0.0.0)
+    simple-hazelcast (>= 0.0.0)
+  windows (1.37.0)
+    chef_handler (>= 0.0.0)
