@@ -1,12 +1,14 @@
 # Description
 
 This cookbook install HazelCast in very basic manner.
-Modify java\_opts to configure hazelcast
 
+# Download URL
 
-# WARNING #
+Each time you're trying to download archive from site it has downloaded differently with checksum mismatch. That's why you have to mirror distributive somewhere, calculate checksum and provide this information to cookbook.
 
-This cookbook is not ready for use. Under development
+# Configuration
+
+Modify `node['hazelcast']['java_opts']` to configure hazelcast. Provide your own template for this
 
 # Requirements
 
@@ -23,8 +25,8 @@ This cookbook is not ready for use. Under development
 
 * `node['hazelcast']['user']` -  Defaults to `hazelcast`.
 * `node['hazelcast']['group']` -  Defaults to `hazelcast`.
-* `node['hazelcast']['download_url']` -  Defaults to `http://download.hazelcast.com/download.jsp?version=hazelcast-3.4.2&p=109157188`.
-* `node['hazelcast']['checksum']` -  Defaults to `6138eeeeb61bdcf1d6c174fe6c2e6689956eaf0b84401c8c28bc53e9848ef068`.
+* `node['hazelcast']['download_url']` -  Defaults to `nil`.
+* `node['hazelcast']['checksum']` -  Defaults to `nil`.
 * `node['hazelcast']['version']` -  Defaults to `3.4.2`.
 * `node['hazelcast']['prefix_home']` -  Defaults to `/opt`.
 * `node['hazelcast']['java_opts']` -  Defaults to `[ ... ]`.
@@ -34,7 +36,7 @@ This cookbook is not ready for use. Under development
 * simple-hazelcast::configure
 * simple-hazelcast::default
 * simple-hazelcast::install
-* simple-hazelcast::service\_runit
+* simple-hazelcast::service_runit
 
 # License and Maintainer
 
