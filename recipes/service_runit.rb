@@ -7,7 +7,6 @@ runit_service 'hazelcast' do
     'home' => ::File.join(node['hazelcast']['prefix_home'], 'hazelcast'),
     'java_opts' => node['hazelcast']['java_opts']
   )
-#  subscribes :restart, "file[#{cfg}]"
   subscribes :restart, 'ark[hazelcast]'
 
   action [:enable, :start]

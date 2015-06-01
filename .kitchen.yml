@@ -21,4 +21,9 @@ suites:
     run_list:
       - recipe[simple-hazelcast-test]
     attributes:
+      hazelcast:
+        java_opts:
+          - -Xmx512m
+          - -DtestOpt=true
+          - -Dconfig.xml=/tmp/config.xml
 
