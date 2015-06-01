@@ -14,19 +14,11 @@ group 'hazelcast group' do
   system true
 end
 
-dist_path = ::File.join(Chef::Config[:file_cache_path], "hazelcast-#{node['hazelcast']['version']}.tar.gz")
-
-remote_file dist_path do
-  source node['hazelcast']['download_url']
-
-  backup false
-  checksum node['hazelcast']['checksum']
-  owner node['hazelcast']['user']
-  group node['hazelcast']['group']
-end
+Chef::Log.warn('Hazelcast download url is not set. I am unable to ark it from nowhere :(') if node['hazelcast']['download_url'].nil?
+Chef::Log.warn('Hazelcast checksum is not set. I will redownload it each run, thats is bad I think :(') if node['hazelcast']['checksum'].nil?
 
 ark 'hazelcast' do
-  url dist_path
+  url node['hazelcast']['download_url']
   owner node['hazelcast']['user']
   group node['hazelcast']['group']
   version node['hazelcast']['version']
@@ -34,4 +26,6 @@ ark 'hazelcast' do
 
   prefix_root node['hazelcast']['prefix_home']
   prefix_home node['hazelcast']['prefix_home']
+
+  not_if { node['hazelcast']['download_url'].nil? || node['hazelcast']['checksum'].nil? }
 end

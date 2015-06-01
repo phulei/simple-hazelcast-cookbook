@@ -1,10 +1,13 @@
 default['hazelcast']['user'] = 'hazelcast'
 default['hazelcast']['group'] = 'hazelcast'
 
+# There are issues with downloading hazelcast directly from site
+# You have to download distro and point this attribute with actual link
+#default['hazelcast']['download_url'] = 'http://mymirror/hazelcast-3.4.2.tar.gz'
+#default['hazelcast']['checksum'] = 'unkown'
 
-default['hazelcast']['download_url'] = 'http://download.hazelcast.com/download.jsp?version=hazelcast-3.4.2&type=tar&p=109629376'
-default['hazelcast']['checksum'] = '484a1a0b53f8bbddd9ee61917183201ddd2eb74262efb460e2d14fc355f0fc26'
-
+default['hazelcast']['download_url'] = nil
+default['hazelcast']['checksum'] = nil
 default['hazelcast']['version'] = '3.4.2'
 
 default['hazelcast']['prefix_home'] = '/opt'
