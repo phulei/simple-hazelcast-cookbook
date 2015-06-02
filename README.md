@@ -1,6 +1,6 @@
 # Description
 
-This cookbook install HazelCast in very basic manner.
+This cookbook install Hazelcast in very basic manner.
 
 # Download URL
 
